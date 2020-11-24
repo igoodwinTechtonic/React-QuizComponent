@@ -4,15 +4,14 @@ import React, { Component } from 'react'
 
 class QuizQuestion extends Component {
   render() {
-    console.log(props);
     return (
       <main>
         <section>
-          <p>{props.quiz_question.instructions_text}</p>
+          <p>{this.props.quiz_question.instruction_text}</p>
         </section>
         <section className="buttons">
           <ul>
-            <li>{props.quiz_question.answer_options[0]}</li>
+            <li>{this.props.quiz_question.answer_options[0]}</li>
           </ul>
         </section>
       </main>

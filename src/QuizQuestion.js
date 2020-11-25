@@ -3,6 +3,11 @@ import QuizQuestionButton from './QuizQuestionButton.js'
 // let quizData = require('./quiz_data.json')
 
 class QuizQuestion extends Component {
+  handleClick(buttonText) {
+     if (buttonText === this.props.quiz_question.answer) {
+       this.props.showNextQuestionHandler();
+     }
+  }
   render() {
     return (
       <main>
@@ -17,7 +22,8 @@ class QuizQuestion extends Component {
               return (
                 <QuizQuestionButton
                 key={key}
-                button_text={buttonText}/>
+                button_text={buttonText}
+                clickHandler={this.handleClick.bind(this)}/>
               )
             })}
             {/* <QuizQuestionButton button_text={this.props.quiz_question.answer_options[0]} /> */}
